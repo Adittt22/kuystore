@@ -1,0 +1,436 @@
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(42, 37, 37);
+}
+
+img {
+    max-width: 100%;
+}
+
+.childbody {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    background-color: rgb(42, 37, 37);
+    padding: 10px 0;
+}
+
+header img {
+    width: 10%;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 750px;
+    border-radius: 30px;
+    padding: 5px 10px;
+}
+
+.search-container input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 15px;
+}
+
+.search-container button {
+    border: none;
+    background: white;
+    color: black;
+    border-radius: 50%;
+    padding: 10px;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   BUTTON CATEGORY
+========================= */
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.btn-container button {
+    background-color: white;
+    flex: 1;
+    border-radius: 15px;
+    padding: 1rem;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.btn-container button.active {
+    background-color: red;
+    color: white;
+}
+
+
+/* =========================
+   SLIDER
+========================= */
+
+.slider {
+    margin-top: 10%;
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-content {
+    width: 100%;
+    height: 100%;
+}
+
+.slider-content img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+marquee span {
+    margin-right: 50px;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    color: white;
+    line-height: 0.2;
+}
+
+
+/* =========================
+   CARD CONTAINER
+========================= */
+
+.card-container {
+    columns: 3 250px;
+    margin-top: 30px;
+    column-gap: 2rem;
+}
+
+.card-content {
+    display: flex;
+    height: auto;
+    background-color: rgb(255, 8, 0);
+    padding: 10px;
+    gap: 15px;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    border: 2px solid transparent;
+    overflow: hidden;
+    break-inside: avoid;
+    transition: border-color 0.3s ease;
+}
+
+.card-content:hover {
+    border-color: white;
+}
+
+.card-content img {
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.card-content:hover img {
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   BANNER CONTENT
+========================= */
+
+.content-banner {
+    columns: 4 180px;
+    column-gap: 2rem;
+}
+
+.card-banner {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border: 3px solid transparent;
+    border-radius: 25px;
+    break-inside: avoid;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-banner:hover {
+    transform: scale(1.05);
+    border-color: white;
+}
+
+.card-banner img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card-banner:hover img {
+    transform: scale(1.05);
+    filter: brightness(80%);
+}
+
+.card-banner figcaption {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: all 200ms ease;
+    opacity: 0;
+}
+
+.card-banner:hover figcaption {
+    bottom: 0;
+    opacity: 1;
+}
+
+
+/* =========================
+   BANNER TOKO
+========================= */
+
+.banner-toko {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.banner-toko img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .childbody {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    header {
+        flex-wrap: wrap;
+    }
+
+    header img {
+        width: 15%;
+    }
+
+    .search-container {
+        max-width: 100%;
+    }
+
+    .slider {
+        margin-top: 5%;
+    }
+
+    .slider button {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+
+    .card-container {
+        columns: 2 200px;
+    }
+
+    .content-banner {
+        columns: 3 150px;
+    }
+
+    .card-banner img {
+        height: 250px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .childbody {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    header {
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    header img {
+        width: 20%;
+    }
+
+    .search-container {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .search-container input {
+        font-size: 13px;
+    }
+
+    .btn-container {
+        gap: 5px;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .btn-container button {
+        flex: 1 0 100px;
+        padding: 10px 5px;
+        font-size: 12px;
+        white-space: nowrap;
+        border-radius: 10px;
+    }
+
+    .slider {
+        margin-top: 20px;
+    }
+
+    .slider-content img {
+        border-radius: 12px;
+    }
+
+    .slider button {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+
+    .prev {
+        left: 8px;
+    }
+
+    .next {
+        right: 8px;
+    }
+
+    .content {
+        line-height: normal;
+    }
+
+    .card-container {
+        columns: 1;
+    }
+
+    .card-content {
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .content-banner {
+        columns: 2;
+        column-gap: 10px;
+    }
+
+    .card-banner {
+        margin-bottom: 15px;
+        border-radius: 15px;
+    }
+
+    .card-banner img {
+        height: 200px;
+        border-radius: 12px;
+    }
+
+    .card-banner figcaption {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+
+    .banner-toko {
+        height: 150px;
+    }
+
+}
