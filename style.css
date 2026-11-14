@@ -294,9 +294,6 @@ marquee span {
         padding-right: 5%;
     }
 
-    header {
-        flex-wrap: wrap;
-    }
 
     header img {
         width: 15%;
